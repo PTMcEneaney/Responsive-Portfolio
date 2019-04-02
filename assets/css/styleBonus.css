@@ -78,10 +78,25 @@ section {
     background-color: #ffffff;
 }
 /* .mainHeader is the box around the name, it is WITHIN the first and secondContainers */
+@keyframes logoColor{
+    0% {
+        background-color: #4aaaa5;
+    }
+    50% {
+        background-color: navy;
+    }
+    100% {
+        background-color: #4aaaa5;
+    }
+
+}
 .logo {
     background-color: #4aaaa5;
     color: #ffffff;
     display: inline-block;
+    animation-name: logoColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 /* .nav contains the nav bar and is aligned absolutely to the right of the second container */
 nav {
@@ -163,6 +178,8 @@ form {
 .submit[type=submit]:hover {
     background-color: #cccccc;
     color: #777777;
+    animation: imageShake;
+    animation-duration: 0.4s;
 }
 .submit {
     background-color: #4aaaa5;
@@ -176,7 +193,6 @@ form {
     margin-top: 5px;
     margin-bottom: 20px;
 }
-
 #message {
     height: 200px;
 }
@@ -196,12 +212,37 @@ form {
 /* .imageContainer:hover {
     box-shadow: 0px 0px 30px #222222;
 } */
+@keyframes imageShake {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(2deg);
+    }
+    40% {
+        transform: rotate(-2deg);
+    }
+    60% {
+        transform: rotate(2deg);
+    }
+    80% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 /* .portfolioImage sets each image width and the z-index so it's in the back */
 .portfolioImage {
     width: 100%;
     z-index: -1;
 }
-#box1 {
+.imageContainer:hover {
+    animation: imageShake;
+    animation-duration: 0.4s;
+}
+   #box1 {
     position: absolute;
     top: 0px;
     left: 0px;
